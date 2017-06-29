@@ -1,0 +1,19 @@
+.ichef-web-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.ichef-web-widget a {
+    width: 26px;
+    height: 26px;
+    background-color: #0ad02c;
+    padding: 12px;
+    display: block;
+    border-radius: 50%;
+}
+
+.ichef-web-widget  svg {
+    width: 100%;
+    fill: white;
+}
