@@ -6,6 +6,9 @@
     "repository": "iCHEF/ichef-web-widget",
     "author": "Teng-hao Chang <zhusee2@gmail.com>",
     "license": "UNLICENSED",
+    "scripts": {
+        "dist": "webpack"
+    },
     "dependencies": {
         "babel-core": "^6.25.0",
         "babel-loader": "^7.1.1",
