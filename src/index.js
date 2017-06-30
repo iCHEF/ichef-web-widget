@@ -2,11 +2,16 @@ import MobileDetect from 'mobile-detect';
 import phoneIcon from './phone.svg';
 import './styles.css';
 
-function appendWidget() {
+function appendWidget({ phone, tooltip = '' } = {}) {
+    if (!phone) {
+        console.warn('Cannot create widget without phone.');
+        return;
+    }
+
     const rootNode = document.createElement('div');
     rootNode.className = 'ichef-web-widget';
     rootNode.innerHTML = `
-        <a href="tel:0227600120" class="ichef-widget-btn" title="致電 iCHEF">
+        <a href="tel:${phone}" class="ichef-widget-btn" title="${tooltip}">
             ${phoneIcon}
         </a>
     `;
@@ -14,9 +19,13 @@ function appendWidget() {
     document.body.appendChild(rootNode);
 }
 
-const detector = new MobileDetect(navigator.userAgent);
+window.iCHEFWidget = {
+    init: (options = {}) => {
+        const detector = new MobileDetect(navigator.userAgent);
 
-// Hide widget from iPad and desktop browsers
-if (detector.mobile() && !detector.is('iPad')) {
-    appendWidget();
-}
+        // Hide widget from iPad and desktop browsers
+        if (detector.mobile() && !detector.is('iPad')) {
+            appendWidget(options);
+        }
+    },
+};
