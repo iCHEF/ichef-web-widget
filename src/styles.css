@@ -2,9 +2,10 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 9999;
 }
 
-.ichef-web-widget a {
+.ichef-widget-btn {
     width: 26px;
     height: 26px;
     background-color: #0ad02c;
@@ -13,7 +14,7 @@
     border-radius: 50%;
 }
 
-.ichef-web-widget  svg {
+.ichef-widget-btn  svg {
     width: 100%;
     fill: white;
 }
